@@ -1,0 +1,147 @@
+/* ==========================================================================
+   Estilos de Secciones y Componentes - Cabecera y Navegación
+   ========================================================================== */
+
+/* 1. Header General */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--bg-header);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Contenedor Flex para la barra superior */
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 2. Logo */
+.header__logo a {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-texto-high);
+  letter-spacing: -0.025em;
+  display: flex;
+  align-items: center;
+}
+
+.header__logo span {
+  color: var(--color-primario);
+  margin-left: 2px;
+}
+
+/* 3. Navegación Principal */
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Enlaces de Navegación */
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-texto-low);
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--color-primario);
+}
+
+/* Línea de efecto hover moderna */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-primario);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* 4. Botón Menú responsive (Hamburger) */
+.header__toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+}
+
+.header__toggle-line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-texto-high);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+/* ==========================================================================
+   Media Queries - Adaptabilidad Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Mostrar botón de menú hamburguesa */
+  .header__toggle {
+    display: flex;
+  }
+
+  /* Ajuste de menú móvil en pantalla completa */
+  .header__nav {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: var(--bg-principal);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 3rem;
+    padding-top: 4rem;
+    border-top: 1px solid var(--border-color);
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 999;
+  }
+
+  /* Mostrar menú móvil */
+  .header__nav.header__nav--active {
+    left: 0;
+  }
+
+  .nav-link {
+    font-size: 1.25rem;
+  }
+
+  /* Animación del menú hamburguesa al abrirse */
+  .header__toggle.header__toggle--active .header__toggle-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .header__toggle.header__toggle--active .header__toggle-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .header__toggle.header__toggle--active .header__toggle-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
