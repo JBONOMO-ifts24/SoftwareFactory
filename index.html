@@ -146,10 +146,107 @@
       </div><!-- /.container -->
     </section>
 
-    <section id="herramientas" class="section-placeholder">
-      <div class="container">
-        <!-- Placeholder para la sección Herramientas -->
-      </div>
+    <!-- ============================================================
+         SECCIÓN 4 — Herramientas (Tarjeta 4 — GABRIEL)
+         ============================================================ -->
+    <section id="herramientas" class="tools">
+      <div class="container tools__container">
+        
+        <!-- Encabezado de sección -->
+        <div class="tools__header">
+          <h2 class="tools__title">Herramientas</h2>
+          <p class="tools__subtitle">
+            Conocé el ecosistema de herramientas tecnológicas que potencian el flujo de trabajo
+            y la automatización de nuestra Software Factory.
+          </p>
+        </div>
+
+        <!-- Layout de dos columnas: Izquierda (Grid de Tarjetas/Botones), Derecha (Visor de Detalle Dinámico) -->
+        <div class="tools__layout">
+          
+          <!-- Lado Izquierdo: Selección de Herramientas -->
+          <div class="tools__grid">
+            <!-- Botón/Card Git -->
+            <button class="tools__card tools__card--active" data-tool="git" aria-label="Ver detalles de Git">
+              <div class="tools__card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="18" cy="18" r="3"/>
+                  <circle cx="6" cy="6" r="3"/>
+                  <circle cx="6" cy="18" r="3"/>
+                  <path d="M18 15V9a4 4 0 0 0-4-4H9"/>
+                  <line x1="6" y1="9" x2="6" y2="15"/>
+                </svg>
+              </div>
+              <div class="tools__card-info">
+                <h3 class="tools__card-title">Git</h3>
+                <p class="tools__card-desc">Control de versiones y colaboración ágil.</p>
+              </div>
+            </button>
+
+            <!-- Botón/Card Trello -->
+            <button class="tools__card" data-tool="trello" aria-label="Ver detalles de Trello">
+              <div class="tools__card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                  <rect x="7" y="7" width="3" height="9" rx="1"/>
+                  <rect x="14" y="7" width="3" height="5" rx="1"/>
+                </svg>
+              </div>
+              <div class="tools__card-info">
+                <h3 class="tools__card-title">Trello</h3>
+                <p class="tools__card-desc">Gestión visual de tareas y Kanban.</p>
+              </div>
+            </button>
+
+            <!-- Botón/Card Antigravity -->
+            <button class="tools__card" data-tool="antigravity" aria-label="Ver detalles de Antigravity">
+              <div class="tools__card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4.5 16.5c-1.5 1.26-2.5 3.19-2.5 5.5h20c0-2.31-1-4.24-2.5-5.5"/>
+                  <path d="M12 2v14"/>
+                  <path d="m16 6-4-4-4 4"/>
+                </svg>
+              </div>
+              <div class="tools__card-info">
+                <h3 class="tools__card-title">Antigravity</h3>
+                <p class="tools__card-desc">Entorno de desarrollo inteligente integrado.</p>
+              </div>
+            </button>
+
+            <!-- Botón/Card MCP -->
+            <button class="tools__card" data-tool="mcp" aria-label="Ver detalles de Model Context Protocol">
+              <div class="tools__card-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M8 12h8"/>
+                  <path d="M12 8v8"/>
+                </svg>
+              </div>
+              <div class="tools__card-info">
+                <h3 class="tools__card-title">MCP</h3>
+                <p class="tools__card-desc">Integración fluida de herramientas y modelos.</p>
+              </div>
+            </button>
+          </div>
+
+          <!-- Lado Derecho: Visor de Detalle (Dinámico) -->
+          <div class="tools__detail-viewer" id="toolsDetailViewer">
+            <div class="tools__detail-content">
+              <div class="tools__detail-header">
+                <div class="tools__detail-badge">Herramienta Activa</div>
+                <h3 class="tools__detail-title">Git</h3>
+              </div>
+              <p class="tools__detail-description">
+                Git es el estándar de la industria para el control de versiones distribuido. Permite a los desarrolladores trabajar en paralelo, trackear cambios de forma precisa y colaborar de manera fluida mediante ramas (sprints, features o hotfixes) sin interferir con el código de producción.
+              </p>
+              <div class="tools__detail-usecase">
+                <strong>Caso de uso en la Factory:</strong> Cada desarrollador crea ramas específicas (ej. <code>feature_gabriel/herramientas</code>) para resolver tareas y utiliza pull requests para integrarlas de forma segura y auditada a la rama <code>main</code>.
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /.tools__layout -->
+      </div><!-- /.container -->
     </section>
 
     <section id="calidad" class="section-placeholder">
