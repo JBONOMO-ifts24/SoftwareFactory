@@ -743,3 +743,378 @@
   }
 }
 
+/* ==========================================================================
+   Sección 5 — Garantía de Calidad (.calidad / .calidad__)
+   Integrante: LAUTARO | Rama: Rama_Lautaro_Sarmiento
+   ========================================================================== */
+
+.calidad {
+  background-color: var(--bg-principal);
+  padding: 5rem 0 6rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Glow decorativo de fondo */
+.calidad::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: 10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.04) 0%,
+    rgba(15, 23, 42, 0) 70%
+  );
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.calidad__container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Encabezado */
+.calidad__header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+}
+
+.calidad__title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-texto-high);
+  letter-spacing: -0.02em;
+  margin-bottom: 1rem;
+}
+
+.calidad__title::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background-color: var(--color-primario);
+  border-radius: 2px;
+  margin: 0.75rem auto 0;
+}
+
+.calidad__subtitle {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-texto-low);
+}
+
+/* Layout de dos columnas */
+.calidad__layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* Tarjeta de Calidad */
+.calidad__card {
+  background-color: var(--bg-tarjetas);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s ease;
+}
+
+.calidad__card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.3);
+  box-shadow: 0 8px 30px rgba(56, 189, 248, 0.1),
+              0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.calidad__card-icon {
+  color: var(--color-primario);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background-color: rgba(56, 189, 248, 0.08);
+  border-radius: 10px;
+  padding: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.calidad__card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-texto-high);
+  margin-bottom: 0.85rem;
+}
+
+.calidad__card-description {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--color-texto-low);
+  margin-bottom: 1.25rem;
+}
+
+/* Lista de Calidad */
+.calidad__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.calidad__list li {
+  font-size: 0.9rem;
+  color: var(--color-texto-low);
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.calidad__list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-primario);
+  font-weight: 700;
+}
+
+/* Estilos de la tarjeta del Lead Developer */
+.calidad__lead-header {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.calidad__avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--color-primario), #0c66e4);
+  color: var(--bg-principal);
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+}
+
+.calidad__lead-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.calidad__lead-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-primario);
+}
+
+.calidad__lead-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-texto-high);
+}
+
+.calidad__lead-quote {
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--color-texto-low);
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--color-primario);
+  margin-top: auto;
+  background-color: rgba(15, 23, 42, 0.3);
+  padding: 1rem 1.25rem;
+  border-radius: 0 8px 8px 0;
+}
+
+/* ==========================================================================
+   Sección Footer (.footer / .footer__)
+   ========================================================================== */
+
+.footer {
+  background-color: #0b0f19;
+  border-top: 1px solid var(--border-color);
+  padding: 5rem 0 0;
+  color: var(--color-texto-low);
+  font-size: 0.9rem;
+}
+
+.footer__container {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 4rem;
+  padding-bottom: 4rem;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer__logo a {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--color-texto-high);
+  letter-spacing: -0.025em;
+}
+
+.footer__logo span {
+  color: var(--color-primario);
+}
+
+.footer__description {
+  line-height: 1.75;
+  font-size: 0.9rem;
+}
+
+.footer__team,
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.footer__team-title,
+.footer__links-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-texto-high);
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer__team-title::after,
+.footer__links-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-primario);
+  border-radius: 1px;
+}
+
+.footer__team-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer__team-list li {
+  position: relative;
+  padding-left: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer__team-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--color-primario);
+}
+
+.footer__team-list li:hover {
+  color: var(--color-texto-high);
+}
+
+.footer__repo-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
+}
+
+.footer__repo-icon {
+  flex-shrink: 0;
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(148, 163, 184, 0.05);
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.footer__bottom-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer__copy {
+  font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   Media Queries — Responsive Calidad y Footer
+   ========================================================================== */
+
+@media (max-width: 992px) {
+  .footer__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+  
+  .footer__content {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .calidad__layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .calidad {
+    padding: 3.5rem 0 4rem;
+  }
+
+  .calidad__title {
+    font-size: 1.75rem;
+  }
+
+  .calidad__card {
+    padding: 1.75rem;
+  }
+
+  .footer__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer__content {
+    grid-column: span 1;
+  }
+
+  .footer__repo-btn {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+
