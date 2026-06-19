@@ -91,5 +91,106 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // 3. Lógica de Carrusel e Imagen Detallada (Lightbox) — Sección Evidencia
+  const cards = document.querySelectorAll('.evidencia__card');
+  const lightbox = document.getElementById('evidenciaLightbox');
+  const lightboxImg = document.getElementById('evidenciaLightboxImg');
+  const lightboxCaption = document.getElementById('evidenciaLightboxCaption');
+  const lightboxClose = document.querySelector('.evidencia-lightbox__close');
+
+  // Inicializar cada carrusel de forma independiente
+  cards.forEach(card => {
+    const slides = card.querySelectorAll('.evidencia__img--carousel');
+    const prevBtn = card.querySelector('.evidencia__carousel-btn--prev');
+    const nextBtn = card.querySelector('.evidencia__carousel-btn--next');
+    const indicators = card.querySelectorAll('.evidencia__indicator');
+    let currentIndex = 0;
+
+    function updateCarousel(newIndex) {
+      // Remover clases activas de la diapositiva e indicador actual
+      slides[currentIndex].classList.remove('active');
+      indicators[currentIndex].classList.remove('active');
+
+      // Calcular el nuevo índice circularmente
+      if (newIndex < 0) {
+        currentIndex = slides.length - 1;
+      } else if (newIndex >= slides.length) {
+        currentIndex = 0;
+      } else {
+        currentIndex = newIndex;
+      }
+
+      // Activar la nueva diapositiva e indicador
+      slides[currentIndex].classList.add('active');
+      indicators[currentIndex].classList.add('active');
+    }
+
+    // Navegación con flechas
+    if (prevBtn && nextBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation(); // Evitar que el clic abra el lightbox
+        updateCarousel(currentIndex - 1);
+      });
+
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        updateCarousel(currentIndex + 1);
+      });
+    }
+
+    // Navegación directa mediante indicadores de punto
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener('click', (e) => {
+        e.stopPropagation();
+        updateCarousel(index);
+      });
+    });
+
+    // Clic en la imagen activa para abrir en Lightbox
+    const track = card.querySelector('.evidencia__carousel-track');
+    if (track) {
+      track.addEventListener('click', () => {
+        const activeImg = slides[currentIndex];
+        if (activeImg && lightbox && lightboxImg && lightboxCaption) {
+          lightboxImg.src = activeImg.src;
+          lightboxImg.alt = activeImg.alt;
+          lightboxCaption.textContent = activeImg.alt;
+          lightbox.classList.add('active');
+          lightbox.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden'; // Evitar scroll de fondo
+        }
+      });
+    }
+  });
+
+  // Funciones para cerrar el Lightbox
+  function closeLightbox() {
+    if (lightbox) {
+      lightbox.classList.remove('active');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = ''; // Restaurar scroll
+    }
+  }
+
+  if (lightboxClose) {
+    lightboxClose.addEventListener('click', closeLightbox);
+  }
+
+  if (lightbox) {
+    // Cerrar al hacer clic fuera de la imagen (en el fondo)
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+  }
+
+  // Cerrar al presionar la tecla Escape
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeLightbox();
+    }
+  });
   
 });

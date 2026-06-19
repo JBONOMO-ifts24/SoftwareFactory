@@ -28,6 +28,7 @@
         <a href="#proceso" class="nav-link">Proceso</a>
         <a href="#herramientas" class="nav-link">Herramientas</a>
         <a href="#calidad" class="nav-link">Calidad</a>
+        <a href="#evidencia" class="nav-link">Evidencia</a>
       </nav>
       <button class="header__toggle" id="headerToggle" aria-label="Menú navegación">
         <span class="header__toggle-line"></span>
@@ -250,6 +251,96 @@
     </section>
 
     <!-- ============================================================
+         SECCIÓN DE EVIDENCIA — Flujo de Trabajo (Trello, Antigravity, GitHub)
+         ============================================================ -->
+    <section id="evidencia" class="evidencia">
+      <div class="container evidencia__container">
+        
+        <!-- Encabezado de la sección -->
+        <div class="evidencia__header">
+          <h2 class="evidencia__title">Evidencia de Implementación</h2>
+          <p class="evidencia__subtitle">
+            Demostración visual del flujo de trabajo real del equipo y la integración de nuestras herramientas de desarrollo.
+          </p>
+        </div>
+
+        <div class="evidencia__grid">
+          <!-- Tarjeta 1: Gestión (Trello) -->
+          <article class="evidencia__card">
+            <div class="evidencia__img-wrapper">
+              <div class="evidencia__carousel-track">
+                <img src="img/evidencia-trello.webp" alt="Evidencia de gestión en Trello: Vista del tablero Kanban general" class="evidencia__img evidencia__img--carousel active" data-index="0">
+                <img src="img/evidencia-trello-card.webp" alt="Evidencia de gestión en Trello: Detalle de tarjeta y checklists" class="evidencia__img evidencia__img--carousel" data-index="1">
+              </div>
+              <button class="evidencia__carousel-btn evidencia__carousel-btn--prev" aria-label="Imagen anterior">&lsaquo;</button>
+              <button class="evidencia__carousel-btn evidencia__carousel-btn--next" aria-label="Siguiente imagen">&rsaquo;</button>
+              <div class="evidencia__carousel-indicators">
+                <span class="evidencia__indicator active" data-slide="0"></span>
+                <span class="evidencia__indicator" data-slide="1"></span>
+              </div>
+            </div>
+            <div class="evidencia__card-content">
+              <span class="evidencia__badge">Fase 1: Gestión</span>
+              <h3 class="evidencia__card-title">Trello</h3>
+              <p class="evidencia__card-desc">
+                Planificación y seguimiento ágil de las tareas a través de tableros Kanban y checklists detallados.
+              </p>
+            </div>
+          </article>
+
+          <!-- Tarjeta 2: Desarrollo (Antigravity) -->
+          <article class="evidencia__card">
+            <div class="evidencia__img-wrapper">
+              <div class="evidencia__carousel-track">
+                <img src="img/evidencia-antigravity.webp" alt="Evidencia de desarrollo con Antigravity: Código y panel chat de IA" class="evidencia__img evidencia__img--carousel active" data-index="0">
+                <img src="img/evidencia-antigravity-preview.webp" alt="Evidencia de desarrollo con Antigravity: Vista previa del navegador integrado" class="evidencia__img evidencia__img--carousel" data-index="1">
+              </div>
+              <button class="evidencia__carousel-btn evidencia__carousel-btn--prev" aria-label="Imagen anterior">&lsaquo;</button>
+              <button class="evidencia__carousel-btn evidencia__carousel-btn--next" aria-label="Siguiente imagen">&rsaquo;</button>
+              <div class="evidencia__carousel-indicators">
+                <span class="evidencia__indicator active" data-slide="0"></span>
+                <span class="evidencia__indicator" data-slide="1"></span>
+              </div>
+            </div>
+            <div class="evidencia__card-content">
+              <span class="evidencia__badge">Fase 2: Desarrollo</span>
+              <h3 class="evidencia__card-title">Antigravity</h3>
+              <p class="evidencia__card-desc">
+                Entorno de desarrollo inteligente que asiste en la programación en tiempo real mediante IA integrada.
+              </p>
+            </div>
+          </article>
+
+          <!-- Tarjeta 3: Integración (GitHub) -->
+          <article class="evidencia__card">
+            <div class="evidencia__img-wrapper">
+              <div class="evidencia__carousel-track">
+                <img src="img/evidencia-github.webp" alt="Evidencia de integración en GitHub: Historial de commits y PRs" class="evidencia__img evidencia__img--carousel active" data-index="0">
+                <img src="img/evidencia-github-merge.webp" alt="Evidencia de integración en GitHub: Pull Request combinada exitosamente" class="evidencia__img evidencia__img--carousel" data-index="1">
+                <img src="img/evidencia-github-extra.webp" alt="Evidencia de integración en GitHub: Detalles de la rama y commits adicionales" class="evidencia__img evidencia__img--carousel" data-index="2">
+              </div>
+              <button class="evidencia__carousel-btn evidencia__carousel-btn--prev" aria-label="Imagen anterior">&lsaquo;</button>
+              <button class="evidencia__carousel-btn evidencia__carousel-btn--next" aria-label="Siguiente imagen">&rsaquo;</button>
+              <div class="evidencia__carousel-indicators">
+                <span class="evidencia__indicator active" data-slide="0"></span>
+                <span class="evidencia__indicator" data-slide="1"></span>
+                <span class="evidencia__indicator" data-slide="2"></span>
+              </div>
+            </div>
+            <div class="evidencia__card-content">
+              <span class="evidencia__badge">Fase 3: Integración</span>
+              <h3 class="evidencia__card-title">GitHub</h3>
+              <p class="evidencia__card-desc">
+                Control de versiones robusto y flujo de integración continua por medio de ramas y Pull Requests.
+              </p>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
          SECCIÓN 5 — Garantía de Calidad (Tarjeta 5 — LAUTARO)
          ============================================================ -->
     <section id="calidad" class="calidad">
@@ -348,6 +439,15 @@
       </div>
     </div>
   </footer>
+
+  <!-- Lightbox Modal para imágenes de evidencia -->
+  <div id="evidenciaLightbox" class="evidencia-lightbox" aria-hidden="true">
+    <button class="evidencia-lightbox__close" aria-label="Cerrar vista de imagen">&times;</button>
+    <div class="evidencia-lightbox__content">
+      <img id="evidenciaLightboxImg" src="" alt="Vista detallada de la evidencia" class="evidencia-lightbox__img">
+      <p id="evidenciaLightboxCaption" class="evidencia-lightbox__caption"></p>
+    </div>
+  </div>
 
   <!-- Lógica de Interactividad -->
   <script src="js/app.js"></script>
